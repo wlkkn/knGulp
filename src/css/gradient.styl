@@ -1,0 +1,118 @@
+@import 'nib'
+
+// 一参：渐变方向，top从上到下，left top从左上角到右下角
+// 二参：起始点颜色
+// 三参：终点颜色
+.gradient1
+  width 150px
+  height 80px
+  background linear-gradient(top, #ccc, #000)
+  // filter progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#1471da, endColorstr=#1C85FB)/*IE<9>*/
+  // -ms-filter "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#1471da, endColorstr=#1C85FB)"/*IE8+*/
+.gradient2
+  width 150px
+  height 80px
+  background linear-gradient(left top, #ccc, #000)
+.gradient3
+  width 150px
+  height 80px
+  background linear-gradient(left, #ace, #f96, #ace, #f96, #ace)
+// 带有百分比
+.gradient4
+  width 150px
+  height 80px
+  background linear-gradient(left, #ace, #f96 5%, #ace, #f96 95%, #ace)
+// 带有角度，0deg从左到右，90deg从下到上
+.gradient5
+  width 150px
+  height 80px
+  background linear-gradient(30deg, #ace, #f96)
+// 渐变上应用透明度
+.gradient6
+  width 142px
+  height 80px
+  background linear-gradient(right, rgba(255,255,25,0), rgba(255,255,255,1)), url(./demo.jpg)
+  
+
+// 径向渐变
+// 指定形状：circle圆形，ellipse椭圆
+// 指定大小：closest-side, closest-corner, farthest-side, farthest-corner, contain or cove
+// 是否包含：contain
+.gradient21
+  width 142px
+  height 80px
+  background radial-gradient(#ace, #f96, #1e90ff)
+.gradient22
+  width 142px
+  height 80px
+  background radial-gradient(bottom left, circle ,#ace, #f96, #1e90ff)
+.gradient23
+  width 142px
+  height 80px
+  background radial-gradient(circle closest-side, #ace, #f96 10%, #1E90FF 50%, #f96)
+.gradient24
+  width 142px
+  height 80px
+  background radial-gradient(contain,#ace, #f96, #1e90ff)
+.gradient25
+  width 142px
+  height 80px
+  background radial-gradient(80% 20%, closest-corner, #ace, #f96)
+  
+// 重复渐变
+.gradient26
+  width 143px
+  height 80px
+  background repeating-linear-gradient(-45deg, #ace, #ace 5px, #f96 5px, #f96 10px)
+.gradient27
+  width 143px
+  height 80px
+  background repeating-radial-gradient(#ace,#ace 5px,#f96 5px,#f96 10px)
+  
+// 样例
+.gradient
+  width 150px
+  height 80px
+  float left
+  margin-right 5px
+  background #ace
+  background-size 20px
+
+ul
+  list-style none
+  &:after
+    clear both
+    content ' '
+    height 0
+    display block
+    visibility hidden
+.gradient28
+  background-image linear-gradient(
+    45deg, 
+    rgba(255, 255, 255, .2) 25%, 
+    transparent 25%,
+    transparent 50%, 
+    rgba(255, 255, 255, .2) 50%, 
+    rgba(255, 255, 255, .2) 75%,
+    transparent 75%, 
+    transparent
+    )
+.gradient29
+  background-image linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+      transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+      transparent 75%, transparent)
+.gradient30
+  background-image linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent)
+.gradient31
+  background-image linear-gradient(0deg, rgba(255, 255, 255, .2) 50%, transparent 50%, transparent)
+.gradient32
+  background-image linear-gradient(45deg, #555 25%, transparent 25%, transparent),
+    linear-gradient(-45deg, #555 25%, transparent 25%, transparent),
+    linear-gradient(45deg, transparent 75%, #555 75%),
+    linear-gradient(-45deg, transparent 75%, #555 75%)
+.gradient33
+  background-image linear-gradient(transparent 50%, rgba(200, 0, 0, .5) 50%, rgba(200, 0, 0, .5)),
+     linear-gradient(90deg, transparent 50%, rgba(200, 0, 0, .5) 50%, rgba(200, 0, 0, .5))
+ul
+  // 兼容IE6、7清除浮动
+  zoom 1

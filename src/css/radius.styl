@@ -1,0 +1,20 @@
+@import 'nib'
+
+// border-radius，如声明四个值则上左顺时针，如两个值，则上左和下右一组值，如三个值，则上右和下左是中间值，如存在/，则/之前的为圆角水平半径，之后为垂直半径，单个命名为border-top-left-radius
+.radius
+  width 300px
+  height 50px
+  border 2px solid red
+.radius1
+  border-radius 10px 15px 20px 30px
+.radius2
+  border-radius 10px 15px 20px 30px / 20px 30px 10px 15px
+.radius3
+  border-radius 10px 30px
+.radius4
+  border-radius 10px 20px 30px
+.radius5
+  background-image url(./demo.jpg)
+  background-repeat no-repeat
+  background-size 100%
+  border-radius 20px

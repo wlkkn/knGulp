@@ -1,0 +1,14 @@
+{
+  "home": {
+    "css": [
+      "/css/test.css",
+      "/css/rgba.css",
+      "/css/radius.css"
+    ],
+    "js": [
+      "/js/tes.js",
+      "/js/test.js"
+    ],
+    "modifiedAt": "2014-12-08 15:27:53"
+  }
+}

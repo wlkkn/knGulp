@@ -1,0 +1,6 @@
+{
+  "path" : "/merge",
+  "expect" : [
+    "/js/dialog.js"
+  ]
+}

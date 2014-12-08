@@ -1,0 +1,124 @@
+@import 'nib'
+@import './gradient'
+@import './rgba'
+@import './radius'
+@import './shadow'
+
+// 带有只是箭头的对话框
+// 原理：通过:after,:before伪类制作两个三角来实现
+.frame1
+  // 对话框宽度
+  $width = 3000px
+  // 对话框高度
+  $height = 100px
+  // 边框背景颜色
+  $bgColor = #fff
+  // 边框宽度
+  $bWidth = 1px
+  // 边框颜色
+  $bColor = #000
+  // 边框圆角
+  $bRadiusWidth = 10px
+  // 边框阴影颜色
+  $bBoxShadow = #888
+  
+  position relative
+  width $width
+  height $height
+  text-align center
+  line-height $height
+  background-color $bgColor
+  border $bWidth solid $bColor
+  border-radius $bRadiusWidth
+  box-shadow 2px 2px 4px $bBoxShadow
+  &:before, &:after
+    content ' '
+    position absolute
+    width 0
+    height 0
+    top $height
+    
+  &:before
+    $left = 36px
+    $beforeBWidth = 20px
+    
+    left $left
+    border $beforeBWidth solid;
+    border-color #666 transparent transparent #666;
+  &:after
+    $left = 37px
+    $afterBWidth = 17px
+    
+    left $left
+    border $afterBWidth solid
+    border-color #fff transparent transparent #fff
+
+// 箭头在左侧就显示右边框
+.frame2
+  $width = 300px
+  $height = 100px
+  $bgColor = #ccc
+  $bWidth = 4px
+  $bColor = #333
+  
+  width $width
+  height $height
+  line-height $height
+  background-color $bgColor
+  position relative
+  border $bWidth solid $bColor
+  &:before, &:after
+    position absolute
+    content ' '
+    width 0
+    height 0
+    right 100%
+    border solid transparent
+  &:before
+    border-width 14px
+    border-right-color $bColor
+    top 10px
+  &:after
+    border-width 9px
+    border-right-color $bgColor
+    top 15px
+    
+// 梯形
+// 原理：元素宽高和边框宽度相近时，改变某一边的颜色可以实现，若宽高为0，则形成一个三角形;改变各个边的宽度，可以配出任意角度的三角形
+.arrow1
+  $width = 10px
+  
+  width $width
+  height $width
+  border $width solid #fff
+  border-top-color red
+.arrow2
+  $width = 0
+  $bWidth = 10px
+  
+  width $width
+  height $width
+  border $bWidth solid #fff
+  border-top-color red
+.arrow3
+  $width = 0
+  $bWidth1 = 10px
+  $bWidth2 = 20px
+  
+  width $width
+  height $width
+  border $bWidth1 solid #fff
+  border-top $bWidth2 solid red
+// 与为元素结合
+.arrow4
+  position relative
+  &:after
+    $width = 0
+    $bWidth = 10px
+    
+    position absolute
+    content ' '
+    width $width
+    height $width
+    border $bWidth solid #fff
+    border-left $bWidth solid red

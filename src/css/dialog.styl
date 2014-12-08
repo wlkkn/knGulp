@@ -1,0 +1,99 @@
+@import 'nib'
+
+.dialog
+  box-shadow 0 0 20px #000
+  background-color #fff
+  .bar
+    // 标题栏高度
+    $barHeight = 38px
+    // 标题栏背景颜色
+    $barBackground = #f0f0f0
+    // 标题栏字号
+    $barFontSize = 16px
+    // 标题缩进
+    $barIndent = 1em
+    // 关闭背景图片高度
+    $closeHeight = 20px
+    // 关闭背景图片上边距
+    $closeMarginTop = ($barHeight - $closeHeight) / 2
+    // 关闭背景图片右边距
+    $closeMarginRight = 10px
+    // 关闭背景图片动画时间
+    $closeAnimateTime = 0.3s
+    // 关闭背景图片旋转角度
+    $closeAnimateNum = 180deg
+    
+    background-color $barBackground
+    height $barHeight
+    line-height $barHeight
+    text-indent $barIndent
+    font-size $barFontSize
+    font-weight: bold
+    .close
+      float right
+      margin-right $closeMarginRight
+      margin-top $closeMarginTop
+      height $closeHeight
+      width $closeHeight
+      cursor pointer
+      background url(./dialog-close.png) no-repeat center
+      transition transform $closeAnimateTime ease-out
+      &:hover
+        transform rotateZ($closeAnimateNum)
+  .container
+    // 内容区内边距
+    $padding = 20px
+    // 按钮组上边距
+    $btnsMarginTop = 20px
+    // 按钮左边距
+    $btnMarginLeft = 15px
+    // 按钮内边距
+    $btnPadding = 30px
+    // 按钮背景色
+    $btnBackgroundColor = #f08257
+    // 按钮滑过背景色
+    $btnHoverBackgroundColor = #e26635
+    // 取消按钮背景色
+    $btnCancelBackgorund = #b2b2b2
+    // 取消按钮滑过背景色
+    $btnCancelHoverBackgorund = #ccc
+    // 按钮文字颜色
+    $btnColor = #fff
+    // 按钮字号
+    $btnFontSize = 14px
+    // 按钮圆角
+    $btnRaidus = 5px
+    // 按钮高度
+    $btnHeight = 38px
+    
+    padding $padding
+    .btns
+      text-align center
+      margin-top $btnsMarginTop
+      .btn
+        &:last-child
+          margin-left $btnMarginLeft
+        cursor pointer
+        display inline-block
+        *display inline
+        *zoom 1
+        padding 0 $btnPadding
+        background-color $btnBackgroundColor
+        border none
+        font-size $btnFontSize
+        color $btnColor
+        border-radius $btnRaidus
+        height $btnHeight
+        line-height $btnHeight
+      .btn:hover
+        background-color $btnHoverBackgroundColor
+      .disabled
+        background-color $btnCancelBackgorund
+      .disabled:hover
+        background-color $btnCancelHoverBackgorund
+.dialog-layerMask
+  // 遮罩层背景色
+  $background = #333
+  
+  background $background
+  opacity 0.5
